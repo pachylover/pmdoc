@@ -39,4 +39,4 @@ bin/
 .vscode/
 
 ### Mac OS ###
-.DS_Store
+.DS_Store!/build/libs/pmdoc-1.0.0.jar
