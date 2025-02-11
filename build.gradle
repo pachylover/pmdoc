@@ -1,0 +1,62 @@
+plugins {
+    id 'application' // CLI 실행을 위한 설정
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1' // Shadow JAR 플러그인 추가
+}
+
+group = 'com.naddang'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.google.code.gson:gson:2.10.1' // JSON 파싱용
+    //테스트
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.6.2'
+}
+
+application {
+    mainClass = 'com.naddang.pmdoc.Main' // Main 클래스 경로 설정
+}
+
+//테스트 관련
+test {
+    useJUnitPlatform()
+}
+
+// 실행 가능한 JAR 빌드 설정
+tasks.named('jar') {
+    manifest {
+        attributes 'Main-Class': 'com.naddang.pmdoc.Main'
+    }
+}
+
+// Shadow JAR 설정
+tasks.named('shadowJar') {
+    archiveBaseName.set('pmdoc')
+    archiveVersion.set('1.0.0')
+    archiveClassifier.set('')
+}
+
+tasks.named('distZip') {
+    dependsOn 'shadowJar'
+}
+
+tasks.named('distTar') {
+    dependsOn 'shadowJar'
+}
+
+tasks.named('startScripts') {
+    dependsOn 'shadowJar'
+}
+
+tasks.named('startShadowScripts') {
+    dependsOn tasks.named('jar')
+}
+
+tasks.named('startShadowScripts') {
+    mustRunAfter tasks.named('jar')
+}

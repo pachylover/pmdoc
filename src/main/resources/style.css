@@ -1,0 +1,177 @@
+/* style.css - Modern & Clean Style for Postman Documentation */
+
+/* Base Styles */
+html {
+	font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+	line-height: 1.6;
+	color: #2d3748;
+	background-color: #f8fafc;
+}
+
+body {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem 1.5rem;
+}
+
+/* Section Containers */
+h1, h2, h3, h4 {
+	color: #1a365d;
+	margin-top: 0.75em;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 2.5rem;
+	font-weight: 800;
+	border-bottom: 3px solid #e2e8f0;
+	padding-bottom: 0.5rem;
+}
+
+h2 {
+	font-size: 1.8rem;
+	font-weight: 700;
+	color: #2b6cb0;
+}
+
+h3 {
+	font-size: 1.4rem;
+	font-weight: 600;
+	color: #4299e1;
+}
+
+h4 {
+	font-size: 1.1rem;
+	font-weight: 500;
+	color: #4a5568;
+}
+
+/* List Styling */
+ul {
+	list-style: none;
+	padding-left: 0;
+	margin: 1rem 0;
+}
+
+li {
+	margin-bottom: 0.75rem;
+	padding: 1rem;
+	background: white;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+	transition: transform 0.1s ease;
+}
+
+
+/* Variables Section */
+#variables li {
+	border-left: 4px solid #63b3ed;
+	padding-left: 1rem;
+}
+
+/* Request Blocks */
+li > ul li {
+	background-color: #f7fafc;
+	box-shadow: none;
+	border: 1px solid #e2e8f0;
+	margin: 0.5rem 0;
+}
+
+/* Code & Preformatted Text */
+pre {
+	background-color: #edf2f7;
+	padding: 1rem;
+	border-radius: 6px;
+	overflow-x: auto;
+	font-family: 'Consolas', monospace;
+	font-size: 0.9em;
+	border: 1px solid #cbd5e0;
+}
+
+/* URL & Method Styling */
+strong {
+	color: #2b6cb0;
+}
+
+p > strong {
+	display: inline-block;
+	min-width: 80px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	body {
+		padding: 1rem;
+	}
+
+	h1 {
+		font-size: 2rem;
+	}
+
+	li {
+		padding: 0.75rem;
+	}
+}
+
+/* Accent Colors */
+code {
+	color: #c53030;
+	background-color: #fff5f5;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+}
+
+/* Header List Items */
+li[style*="background"] {
+	border-radius: 6px;
+	margin: 0.5rem 0;
+	padding: 0.75rem;
+}
+
+/* Collapsible List Items */
+.collapsible {
+	position: relative;
+	cursor: pointer;
+}
+.collapsible:hover {
+	background-color: #f7fafc;
+	transform: translateY(-2px);
+}
+
+.collapsible::before {
+	content: "◀";
+	position: absolute;
+	right: 1rem;
+	top: 1rem;
+	font-size: 0.8em;
+	color: #4a5568;
+	transition: transform 0.2s ease;
+}
+
+.collapsible.active::before {
+	content: "▼";
+}
+
+.collapsible-content {
+	max-height: 0;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	transition: max-height 0.3s ease-out;
+}
+
+/* 중첩된 collapsible-content를 지원하기 위해 max-height를 큰 값으로 설정 */
+.collapsible-content.expanded {
+	max-height: 1000px; /* 충분히 큰 값 */
+}
+.collapsible-content ul {
+	margin-left: 1rem;
+}
+
+.collapsible-content ul .collapsible-content.expanded {
+	margin-left: 1rem;
+	margin-bottom: 1rem;
+	padding: 0.5rem;
+	background-color: #d3f1ff;
+	border-radius: 1%;
+}
