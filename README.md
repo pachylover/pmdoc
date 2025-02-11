@@ -12,6 +12,9 @@ PMDoc은 Postman JSON 파일을 HTML 형식으로 변환해주는 CLI 애플리�
 
 ## 사용법
 
+### requirements
+**JAVA 21 이상의 버전이 설치되어 있어야 합니다.**
+
 ### 실행 방법
 
 ```bash
@@ -24,6 +27,9 @@ pmdoc <Postman JSON 파일 경로>
 PMDoc is a CLI application that converts Postman JSON files into HTML format. With this tool, you can easily document your Postman collections by converting them into HTML documents.
 
 ## Usage
+
+### requirements
+**Java 21 or higher must be installed.**
 
 ### How to Run
 
