@@ -3,7 +3,6 @@
 ![javascript](https://img.shields.io/badge/javascript-ES6+-yellow)
 ![css](https://img.shields.io/badge/css-3-blue)
 ![html](https://img.shields.io/badge/html-5-orange)
-![license](https://img.shields.io/badge/license-MIT-green)
 
 ![main1](/images/main1.png)
 ![main2](/images/main2.png)
